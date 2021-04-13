@@ -154,28 +154,6 @@ https://github.com/spring-projects/spring-boot/wiki#release-notes
     <scope>runtime</scope>
 </dependency>
 ```
-Properties that are added late to the environment, such as when using @PropertySource, will not be taken into account.
-Once you’re done with the migration, please make sure to remove this module from your project’s dependencies.
-To upgrade an existing CLI installation, use the appropriate package manager command (for example, brew upgrade). If you manually installed the CLI, follow the standard instructions, remembering to update your PATH environment variable to remove any older references.
-
-1. Developing Your First Spring Boot Application
-This section describes how to develop a small “Hello World!” web application that highlights some of Spring Boot’s key features. We use Maven to build this project, since most IDEs support it.
-
-The spring.io web site contains many “Getting Started” guides that use Spring Boot. If you need to solve a specific problem, check there first.
-
-You can shortcut the steps below by going to start.spring.io and choosing the "Web" starter from the dependencies searcher. Doing so generates a new project structure so that you can start coding right away. Check the Spring Initializr documentation for more details.
-
-Before we begin, open a terminal and run the following commands to ensure that you have valid versions of Java and Maven installed:
-
-$ java -version
-java version "1.8.0_102"
-Java(TM) SE Runtime Environment (build 1.8.0_102-b14)
-Java HotSpot(TM) 64-Bit Server VM (build 25.102-b14, mixed mode)
-$ mvn -v
-Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T14:33:14-04:00)
-Maven home: /usr/local/Cellar/maven/3.3.9/libexec
-Java version: 1.8.0_102, vendor: Oracle Corporation
-This sample needs to be created in its own directory. Subsequent instructions assume that you have created a suitable directory and that it is your current directory.
 
 
 ## 4. 첫번째 스프링 부트 애플리케이션 개발 
