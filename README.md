@@ -33,4 +33,6 @@
 
 ## 🌱 진행 상황
 - [Spring Boot 2.4.x 공식문서](https://github.com/Meet-Coder-Study/reference-documentation-study/tree/main/spirng-boot-2.4.x)
-
+    - 일정 : 2021. 04. 08 목요일 - 2021. 06. 24 목요일 - 총 12주 진행
+    - 매주 목요일 저녁 8시 30분에 매주 zoom으로 진행합니다. 
+    - 인원 : 12명
