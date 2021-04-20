@@ -2,7 +2,7 @@
 
 ## Build Systems
 - 2장 내용 참고
-- grable flow
+- gradle flow
 
 
   <img width="300" src="https://user-images.githubusercontent.com/60383031/115390641-7114c200-a219-11eb-8501-d01afafa5a9f.png">
