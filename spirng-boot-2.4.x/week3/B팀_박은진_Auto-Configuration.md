@@ -128,7 +128,7 @@ public class Application {
 <br>
 
 > 📌 ComponentScan으로 등록되는 Bean과 Spring Boot가 정의한 Bean이 충돌하진 않을까? <br><br>
-**"Spring Boot는 @Confition과 @Conditional을 이용해 이러한 문제를 해결하여 AutoConfiguration 기능을 제공해준다."**
+**"Spring Boot는 Confition interface와 @Conditional을 이용해 이러한 문제를 해결하여 AutoConfiguration 기능을 제공해준다."**
 
 
 <br>
@@ -148,7 +148,7 @@ public class Application {
 
 - AutoConfiguration 정보는 아래와 같이 상당히 많이 등록되어 있다.
 - 따라서 각 AutoConfiguration이 필요한 상황에만 실행될 수 있도록 annotaion으로 관리한다.
-- @Conditional, @Condition 등
+- @Conditional와 Condition 인터페이스
 
 <br>
 
