@@ -1,7 +1,7 @@
 name: automerge
 on:
   schedule:
-    - cron: '52 15 * * 0'
+    - cron: '58 15 * * 0'
 jobs:
   automerge:
     runs-on: ubuntu-latest
@@ -12,3 +12,4 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.AUTO_MERGE }}"
           MERGE_LABELS: "automerge,!work in progress"
           MERGE_REMOVE_LABELS: "automerge"
+          TIME_ZONE: "Asia/Seoul"
