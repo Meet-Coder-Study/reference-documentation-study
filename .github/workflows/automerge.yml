@@ -12,4 +12,3 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.AUTO_MERGE }}"
           MERGE_LABELS: "automerge,!work in progress"
           MERGE_REMOVE_LABELS: "automerge"
-          TIME_ZONE: "Asia/Seoul"
