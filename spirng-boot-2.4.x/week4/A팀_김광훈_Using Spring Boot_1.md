@@ -14,13 +14,27 @@ public class DatabaseAccountService implements AccountService {
     }
 
     // ...
-
 }
 
-- 의문점
-    - 지금까지 스프링을 개발하면서 생성자 주입을 할 때 생성자 위에 @Autowired 를 붙여 본 경험이 없었다.
-    - 검색을 해본 결과 Spring 4.3 버전 이후로는 생략 가능하다고 한다.
-    - 참고: https://leejisoo860911.tistory.com/2
+
+- 생성자가 딱 1개 있는 경우는 @Autowired를 생략할 수 있다.
+
+@Service
+public class DatabaseAccountService implements AccountService {
+
+    private final RiskAssessor riskAssessor;
+
+    public DatabaseAccountService(RiskAssessor riskAssessor) {
+        this.riskAssessor = riskAssessor;
+    }
+
+    // ...
+}
+
+
+- 생성자가 여러개 있는 상황에서 스프링은 어떤 생성자에 @Autowired 해야하는지 알 수 없다.
+
+
 ```
 <br>
 
