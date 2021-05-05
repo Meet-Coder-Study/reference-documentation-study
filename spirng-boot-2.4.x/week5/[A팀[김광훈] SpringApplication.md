@@ -9,9 +9,9 @@ public static void main(String[] args) {
 
 (2) 한 줄 기능 정리
 <br>
-- main() 메서드에서 스프링 부트 어플리케이션이 Boot 하는데 편리한 기능들 제공 ---> 매우 모호함
+- main() 메서드에서 스프링 부트 어플리케이션이 Boot 하는데 편리한 기능들 제공
 
-(3) 어떤 기능들이 실행될까  ?? ---> 클래스를 따라가 봄
+(3) 어떤 기능들이 실행될까  ??
 
 <img width="700" src="https://user-images.githubusercontent.com/60383031/117107998-806d4100-adbd-11eb-9074-1f88dd40b6e4.png">
 
@@ -70,7 +70,9 @@ public static void main(String[] args) {
     initialDelaySeconds: 60
     periodSeconds: 10
   ```  
-  - 스프링에서는 LivnessState 객체를 아래와 같이 제공
+  
+- Spring Boot
+  - LivnessState 객체를 아래와 같이 제공
   
   <img width="700" src="https://user-images.githubusercontent.com/60383031/117163175-5ee07980-adfe-11eb-86b2-2d4881eab76e.png">
 
@@ -89,7 +91,9 @@ public static void main(String[] args) {
     periodSeconds: 10
   
   ```
-  - 스프링에서는 ReadinessState 객체를 아래와 같이 제공
+
+- Spring Boot
+  - ReadinessState 객체를 아래와 같이 제공
 
   <img width="700" src="https://user-images.githubusercontent.com/60383031/117165187-3b1e3300-ae00-11eb-8bf6-4b01720b019d.png">
 
