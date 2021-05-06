@@ -47,3 +47,88 @@ Application 시작 시 출력되는 배너도 설정이 가능하다.
 > 이 외에도 ``org.springframework.boot.Banner`` interface를 implement 받아서 실제로 printBanner()를 구현하면 custom 가능하다.
 
 ### 1.4 Customizing SpringApplication
+
+ [SpringApplication](https://docs.spring.io/spring-boot/docs/2.4.3/api/org/springframework/boot/SpringApplication.html) instance를 생성해서 설정들을 customizing이 가능하다.
+ 
+ 기존 default SpringApplication을 사용한 예제
+ ```java
+  @Configuration
+  @EnableAutoConfiguration
+  public class MyApplication  {
+ 
+    // ... Bean definitions
+ 
+    public static void main(String[] args) {
+      SpringApplication.run(MyApplication.class, args);
+    }
+  }
+```
+instance를 생성하여 설정 드을 customizing 한 SpringApplication 예제
+ ```java
+public static void main(String[] args) {
+   SpringApplication application = new SpringApplication(MyApplication.class);
+   // ... customize application settings here
+   application.setBannerMode(Banner.Mode.OFF);
+   application.run(args)
+ }
+```
+
+``application.properties``를 활용해서 SpringApplication 설정하는것도 가능하다. [Externalized Configuration](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-external-config) 활용하는 것도 가능하다.
+구성에 관한 내용은 [``SpringApplication`` JavaDoc](https://docs.spring.io/spring-boot/docs/2.4.3/api/org/springframework/boot/SpringApplication.html)을 참조하면된다.
+
+### 1.5 Fluent Builder API
+
+만약, ``ApplicationContext`` hierarchy 빌드가 필요하거나 fluent builder API를 사용하는 것을 선호한다면 ``SpringApplicationBuilder``를 사용할 수 있다.
+
+``SpringApplicationBuilder``는 여러 method chaining을 통해서(``parent``, ``child`` method 포함) 계층을 만들 수 있다.
+
+```java
+new SpringApplicationBuilder()
+        .sources(Parent.class)
+        .child(Application.class)
+        .bannerMode(Banner.Mode.OFF)
+        .run(args);
+```
+
+### 1.6 Application Availability
+
+Spring Boot에는 ``liveness``, ``readiness`` 와 같은 일반적인 Application의 가용 상태를 지원한다. 만약, Spring Boot의 ``actuator``를 사용한다면 Application 가용 상태에 대한 정보들을 노출시켜 Application 모니터링을 할 수 있다.
+
+#### 1.6.1 Liveness State
+
+Liveness State는 Application이 올바르게 동작할 수 있도록 허용하는 상태인지, 또는 현재 문제가 있더라도 자체적으로 복구가 가능한지에 대한 상태를 의미한다.
+Liveness State가 깨진다면, Application 스스로 복구가 불가능하기 때문에 인프라 영역에서 application을 재시작 해야함을 의미한다.
+
+> 일반적으로 ``Liveness State``는 [Health checks](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/production-ready-features.html#production-ready-health)같은 외부적인 요소가 기반이 되지 않는다. 외부 시스템에 문제가 있는 경우 플랫폼 전체적으로 재시작 되거나 단계적으로 문제가 발생하게 되기 때문.
+
+#### 1.6.2  Readiness State
+
+Readiness State는 Application이 traffic을 처리 할 준비가 되었는지를 보여주는 상태이다. Readiness State가 깨진다면 현재 traffic을 application으로 라우팅하지 말아야 한다고 플랫폼에 알려준다.
+
+#### 1.6.3 Managing the Application Availability State
+
+``ApplicationAvailability`` interface를 통해서 Application 상태를 더 자주 업데이트 할 수 있다.
+
+### 1.7 Application Events and Listeners
+
+``SpringApplication``은 ``ContextRefreshedEvent``와 같은 스프링 프레임워크가 발생시키는 이벤트들과 더불어 몇몇 Application 이벤트들을 발생시킨다.
+
+> ``ApplicationContext``가 만들어지기 전에 발생하는 Event도 있으므로(``@Bean`` 사용 불가) 해당 Event에 ``SpringApplication.addListeners()``, ``SpringApplicationBuilder.listeners()``  방법 등으로 리스너를 등록 할 수 있다.
+>
+> 리스너 자동 등록하려면 ``META-INF/spring.factories`` 파일을 프로젝트에 추가하고 거기에 ``org.springframework.context.ApplicationListener`` key를 이용해서 리스너들을 등록한다. 
+
+
+ Application Event들은 실행 시 아래의 순서대로 보내진다.
+ 1. Application이 시작되고 어떤 처리도 하기 전에 ``ApplicationStartingEvent``가 등록된 리스너들과 Initializer들을 제외하고 보내진다.
+ 2. ``ApplicationEnvironmentPreparedEvent``는 Context에서 사용될 Environment을 찾았지만 아직 Context가 생성되기 전에 보내진다.
+ 3. ``ApplicationContextInitializedEvent``는 ``ApplicationContext``가 준비되고 ``ApplicationContextInitializers``가 호출되었지만 정의된 bean이 로딩되기 전에 보내진다.
+ 4. ``ApplicationPreparedEvent``은 정의된 빈들이 로딩되고 refresh가 시작되기 바로전에 보내진다.
+ 5. ``ApplicationStartedEvent``는 Context가 refresh되고 Application과 command-line runner가 호출되기 전에 보내진다.
+ 6. ``AvailabilityChangeEvent``는 ``LivenessStat.CORRECT`` 와 함께 바로 보내져서 application이 live 상태임을 나타낸다.
+ 7. 어떤 [application and command-line runners](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-command-line-runner)라도 호출되면 ``ApplicationReadyEvent``가 보내진다.
+ 8. ``AvailabilityChangeEvent``는 ``ReadinessState.ACCEPTING_TRAFFIC``와 함께 바로 보내져서 application이 이제 서비스를 수행할 수 있는 상태임을 나타낸다.
+ 9. ``ApplicationFailedEvent``는 시작하는 도중에 예외가 발생하면 보내진다.
+ 
+ > Application이 ``SpringApplication`` instance 계층 구조를 사용하는 경우 이벤트 리스너는 같은 타입의 application event 객체들을 여러개 받게 된다. 따라서 꼭! 리스너는 Context 비교를 통해서 자신의 Context에서 발생한 이벤트인지 자식 Context에서 발생한 이벤트인지 구별해야 한다.(``ApplicationContextAware``를 구현하거나 리스너가 Bean일 경우 ``@Autowired``을 사용할 수 있다.)
+>
+> 
