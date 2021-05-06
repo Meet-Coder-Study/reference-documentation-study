@@ -1,20 +1,38 @@
-# springboot-reference-documentation-study
-스프링부트 2.4.3 공식문서 읽기 스터디
+# 📃 reference-documentation-study
+매주 공식문서를 일정 분략을 읽고 정리하여, 발표하는 스터디입니다.
 
-## 참고링크
-- [운영방안](https://www.notion.so/Reference-Documentation-Study-1-d385c8e2705844e2b28181fcd71cb59d)
+## 🤷‍♂ 질문 / 답변 (이슈)
+- 이슈는 질문/답변 게시판으로 사용합니다.
+- template이 만들어져 있기 때문에 가져다 쓰시면 됩니다.
+- 질문과 답변은 자유롭게 남겨주시면 됩니다.
+- 이슈는 close 하지 말아주세요.
 
-## 발표 자료
-| 주차 | 제목 | 발표자료
-| :---: | :---: | :---:
-| 2주차 | [Getting Started](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/getting-started.html) | -
-| 3주차 | [Build System](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/using-spring-boot.html#using-boot-build-systems) / [Structuring Your Code](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/using-spring-boot.html#using-boot-structuring-your-code) / [Configuration Classes](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/using-spring-boot.html#using-boot-configuration-classes) / [Auto-configuration](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/using-spring-boot.html#using-boot-auto-configuration) | -
-| 4주차 | [Spring Beans and Dependency Injection](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/using-spring-boot.html#using-boot-spring-beans-and-dependency-injection) / [Using the @SpringBootApplication Annotation](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/using-spring-boot.html#using-boot-using-springbootapplication-annotation) / [Running Your Application](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/using-spring-boot.html#using-boot-running-your-application) / [Developer Tools](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/using-spring-boot.html#using-boot-devtools) / [Packaging Your Application for Production](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/using-spring-boot.html#using-boot-packaging-for-production) | -
-| 5주차 | [SpringApplication](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features) / [Externalized Configuration](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-external-config) | -
-| 6주차 | [Profiles](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-profiles) / [Logging](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-logging) / [Internationalization](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-internationalization) / [JSON](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-json) / [Developing Web Application](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-developing-web-applications) | -
-| 7주차 | [Security](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-security) / [Graceful shutdown](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-graceful-shutdown) / [Caching](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-caching) / [Messaging](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-messaging) / [Calling REST Services with RestTemplate](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-resttemplate) / [Calling REST Services with WebClient](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-webclient) / [Validation](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-validation) | -
-| 8주차 | [Working with SQL Databases](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-sql) / [Distributed Transactions with JTA](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-jta) | -
-| 9주차 | [Working with NoSQL Technologies](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-nosql) / [Spring Integration](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-integration) | -
-| 10주차 | [Sending Email](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-email) / [Quartz 스케줄러](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-quartz) / [Task Execution and Scheduling](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-task-execution-scheduling) / [Hazelcast](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-hazelcast) / [Spring Session](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-session) / [Monitoring and Management over JMX](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-jmx) / [WebSockets](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-websockets) / [Web Services](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-webservices)
-| 11주차 | [Testing](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-testing) | -
-| 12주차 | [Creating Your Own Auto-configuration](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-developing-auto-configuration) / [Container Images](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/spring-boot-features.html#boot-features-container-images) / [Deploying Spring Boot Applications](https://docs.spring.io/spring-boot/docs/2.4.3/reference/html/deployment.html#deployment) | - 
+```markdown
+## 주의사항 (해당 내용은 삭제해주세요.)
+- 질문에 맞는 공식문서에 해당 제목과 링크를 달아주세요.
+- 어느 부분을 읽다가 질문이 생겼는지 Part에 넣어주세요.
+- 질문은 최대한 자세하게 적어주세요.
+- 어느 공식문서 스터디 인지 라벨을 이용해서 적어주세요.
+- 몇 주차인지 라벨을 이용해서 적어주세요.
+
+## 📃 Reference Documentation
+
+## ✍️ Part
+
+## ？Questions
+```
+
+## 🤗 진행 방식
+- 각 진행 방식은 하단 진행 상황 `README.md`에서 확인할 수 있습니다. 링크를 클릭해주세요.
+
+## 🧐 ️문의사항
+
+문의사항이 있다면 아래 이메일로 연락주세요
+
+📧 dev.meetcoder@gmail.com
+
+## 🌱 진행 상황
+- [Spring Boot 2.4.x 공식문서](https://github.com/Meet-Coder-Study/reference-documentation-study/tree/main/spirng-boot-2.4.x)
+    - 일정 : 2021. 04. 08 목요일 - 2021. 06. 24 목요일 - 총 12주 진행
+    - 매주 목요일 저녁 8시 30분에 매주 zoom으로 진행합니다. 
+    - 인원 : 12명
