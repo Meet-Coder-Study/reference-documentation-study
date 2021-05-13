@@ -149,14 +149,40 @@ logging.level.web=DEBUG
 
 <br>
 
+
 ### Custom Log Configuration
 
 Spring boot에서는 `org.springframework.boot.logging.LoggingSystem` system property를 사용함으로서 특정한 logging system을 사용하도록 강제할 수 있다.
 
-`logging.config` 설정 
+![image](https://user-images.githubusercontent.com/37873745/118116910-d9744f00-b425-11eb-84ff-9c17eb345a8b.png)
 
-[Log4j 2 제대로 사용하기 - 설정](https://velog.io/@bread_dd/Log4j-2-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+만약 특정한 경로로 로깅 파일을 제공하고 싶다면 `logging.config` 속성 값에 설정하면 된다.
 
-`logback` 설정 파일
+```yaml
+logging.config=classpath:logback/logback.xml
+```
 
-[[스프링부트 (5)] Spring Boot 로그 설정(1) - Logback](https://goddaehee.tistory.com/206)
+<br>
+
+### Logback customization
+
+앞서 이야기한대로 Spring Boot에서는 기본적으로 Logback을 사용하고 있다.
+
+근데 customization을 하기 위해서 `logback-spring.xml` 같은 파일을 제공한다? `application.yml` 에 여러 로깅에 대한 속성을 정의하면 어떻게 되는거지?
+
+> 1) classpath(resources디렉토리 밑)에 logback-spring.xml파일이 있으면 설정파일을 읽어간다.
+> 2) logback-spring.xml파일이 없다면 .yml(.properties)파일의 설정을 읽어간다.
+> 3) logback-spring.xml파일과 .yml(.properties)파일이 동시에 있으면 .yml(.properties) 설정 파일을 적용 후 xml파일이 적용된다.
+>
+> Reference: [https://goddaehee.tistory.com/206](https://goddaehee.tistory.com/206)
+
+따로 파일을 빼서 Customization 하는 이유?
+
+- Logging을 관리하는 파일 완전히 구분
+- 다양한 옵션 + 자료찾기 쉬움
+
+logback XML 문서 작성시, 참조할 수 있는 곳
+
+- [http://logback.qos.ch/manual/index.html](http://logback.qos.ch/manual/index.html)
+- [https://www.baeldung.com/logback](https://www.baeldung.com/logback)
+- (샘플파일) [https://goddaehee.tistory.com/206](https://goddaehee.tistory.com/206)
