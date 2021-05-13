@@ -48,7 +48,7 @@ spring.profiles.group.production[1]=prodmq
 
 - logging.file.path / logging.file.name 속성값을 이용해 파일로 로그를 저장할 수 있습니다.
 
-[제목 없음](https://www.notion.so/b2dc6306fa594fef9e3142b3347a018c)
+![image](https://user-images.githubusercontent.com/53366407/118116636-771b4e80-b425-11eb-896b-24650f70ac24.png)
 
 ### 로그 레벨 설정
 
@@ -62,9 +62,7 @@ logging.level.org.hibernate=error
 
 ### Custom Log
 
- 
-
-[제목 없음](https://www.notion.so/19184ea622324172836b556ca8cb6f53)
+![image](https://user-images.githubusercontent.com/53366407/118116573-67036f00-b425-11eb-9870-88c5aa3cd2c9.png)
 
 ### 추가적으로 설명 할 것
 
