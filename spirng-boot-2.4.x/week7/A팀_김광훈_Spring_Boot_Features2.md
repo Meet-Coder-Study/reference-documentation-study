@@ -20,13 +20,6 @@ server.shutdown=graceful
 spring.lifecycle.timeout-per-shutdown-phase=20s
 ```
 
-## Caching
-개념
-- Spring은 캐싱에 대한 기능을 지원한다. 
-- 해당 기능을 사용하려면 @EnableCaching annotation을 사용하면 된다.
-
-
-
 ## Calling REST Services with RestTemplate
 개념
 ```
