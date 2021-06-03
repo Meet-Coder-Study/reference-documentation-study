@@ -25,7 +25,7 @@ SQL은 Structured Query Language(구조화된 쿼리 언어)의 약자로서, RD
     - RDB에서는 데이터를 여러개의 테이블에 나눠서 저장하기 때문에, 데이터들의 중복을 피할 수 있다.
      테이블마다 저장하는 데이터의 목적이 존재한다.
       
-![RDB예제](image/RDB예제.jpg) 
+![RDB예제](image/B팀_박유진_RDB예제.jpg) 
 
 ### 관계형 DB가 가지고 있는 특성
 - Transaction(트랜잭션) : query를 하나의 단위로(트랜잭션) 묶어서 만약 중간에 실행이 중단되거나 문제가 발생한 경우, 처음부터 다시 실행하는 Rollback을 수행하고, 오류없이 실행을 마치면 commit 하는 실행 단위를 말한다.
@@ -53,7 +53,7 @@ RDB와 반대대는 특징들
 RDB에서의 Recode(Row)를 NoSQL에서는 documents라고 부른다. documents는 JSON과 비슷한 형태이다.
 RDB에서는 정해진 스키마에 해당하는 데이터만 추가할 수 있지만, NoSql에서는 정해진 스키마가 없기 때문에 다른 구조의 데이터를 같은 컬렉션을(=RDB에서 테이블) 추가할 수 있다.
 
-![NoSQL예제](image/NoSQL예제.jpg)
+![NoSQL예제](image/B팀_박유진_NoSQL예제.jpg)
 
 RDB에서는 각각 Orders, Users, Products 테이블을 만들어서 각각의 테이블에 데이터를 넣어줬다면, NoSQL의 경우 위의 그림처럼 하나의 Orders Collection에 모든 정보(User와 Products)를 같이 저장한다.
 따라서, NoSQL에서는 RDB와 다르게 Join이라는 개념이 존재하지 않는다.(사용할 수 있는 방안이 있다고는 하지만 일반적인 방법이 아니라고 한다.)
