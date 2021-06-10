@@ -18,18 +18,35 @@
 <summary>application.properties</summary>
 <div markdown="1">
 
+```properties
 spring.mail.host=smtp.gmail.com
 spring.mail.port=587
 spring.mail.username=이메일
 spring.mail.password=비밀번호
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
+```
 
 </div>
 </details>
 
+<br>
+
 - 기본 timeout은 무한
 - Mail 서버에 의해 thread가 차단되지 않도록 변경 가능
+
+<details>
+<summary>application.properties</summary>
+<div markdown="1">
+
+```properties
+spring.mail.properties[mail.smtp.connectiontimeout]=5000
+spring.mail.properties[mail.smtp.timeout]=3000
+spring.mail.properties[mail.smtp.writetimeout]=5000
+```
+
+</div>
+</details>
 
 <br>
 
